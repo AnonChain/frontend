@@ -1,167 +1,201 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    
-    <style>
-      body {
-        background-color: #f8f8fb;
-      }
-      
-      .gridParent {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 1fr 1fr 2fr 1fr;
-        grid-column-gap: 60px;
-        grid-row-gap: 28px;
-        margin: 40px 400px 0px 40px;
-        
-      }
-  
-      .baseCard {
-        min-width: 344px;
-        height: 140px;
-        background-color: #fff;
-        border-radius:10px;
-        position: relative;
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        -webkit-box-shadow:0px 1px 1px #eaeaec;
-        -moz-box-shadow:0px 1px 1px #eaeaec;
-        box-shadow:0px 1px 1px #eaeaec;
-      }
-      
-      .hospitalsCard { grid-area: 1 / 1 / 2 / 2; }
-      .manufacturersCard { grid-area: 1 / 2 / 2 / 3; }
-      .suppliersCard { grid-area: 1 / 3 / 2 / 4; }
-      .charityCard { grid-area: 2 / 1 / 3 / 2; }
-      .collaboratorsCard { grid-area: 2 / 2 / 3 / 3; }
-      .defenceCard { grid-area: 2 / 3 / 3 / 4; }
-      .suppliesPieCard {
-          height: inherit; 
-          grid-area: 3 / 1 / 5 / 2; }
-      .suppliesVsHoldingsCard {
-            height: inherit;
-            grid-area: 3 / 2 / 4 / 4; 
-           }
-      .suppliesProducedCard { grid-area: 4 / 3 / 5 / 4; }
-      .hoursOfSuppliesCard {
-        grid-area: 4 / 2 / 5 / 3; 
-} 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-      
-      .vertical-center {
-        margin: 0;
-        position: absolute;
-        top: 50%;
-        -ms-transform: translateY(-50%);
-        transform: translateY(-50%);
-      }
-      
-      .iconEllipse {
-        width: 70px;
-        height: 70px;
-        border-radius:50%;
-        background-color: #555555   ;
-        margin-left:40px;
-      }
-    </style>
-    
-    <title>AnonChain</title>
-  </head>
-  <!-- Just an image -->
+  <style>
+    body {
+      background-color: #f8f8fb;
+    }
+
+    .gridParent {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1fr 1fr 2fr 1fr;
+      grid-column-gap: 60px;
+      grid-row-gap: 28px;
+      margin: 40px 400px 0px 40px;
+
+    }
+
+    .baseCard {
+      min-width: 344px;
+      height: 140px;
+      background-color: #fff;
+      border-radius: 10px;
+      position: relative;
+
+      -webkit-box-shadow: 0px 1px 1px #eaeaec;
+      -moz-box-shadow: 0px 1px 1px #eaeaec;
+      box-shadow: 0px 1px 1px #eaeaec;
+    }
+
+    .hospitalsCard {
+      grid-area: 1 / 1 / 2 / 2;
+    }
+
+    .manufacturersCard {
+      grid-area: 1 / 2 / 2 / 3;
+    }
+
+    .suppliersCard {
+      grid-area: 1 / 3 / 2 / 4;
+    }
+
+    .charityCard {
+      grid-area: 2 / 1 / 3 / 2;
+    }
+
+    .collaboratorsCard {
+      grid-area: 2 / 2 / 3 / 3;
+    }
+
+    .defenceCard {
+      grid-area: 2 / 3 / 3 / 4;
+    }
+
+    .suppliesPieCard {
+      height: inherit;
+      grid-area: 3 / 1 / 5 / 2;
+    }
+
+    .suppliesVsHoldingsCard {
+      height: inherit;
+      grid-area: 3 / 2 / 4 / 4;
+    }
+
+    .suppliesProducedCard {
+      grid-area: 4 / 3 / 5 / 4;
+    }
+
+    .hoursOfSuppliesCard {
+      grid-area: 4 / 2 / 5 / 3;
+    }
+
+
+    .vertical-center {
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+
+    .iconEllipse {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background-color: #555555;
+      margin-left: 40px;
+    }
+  </style>
+
+  <title>AnonChain</title>
+</head>
+<!-- Just an image -->
 <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="#"  style="font-size: 1.75rem;">
-      <img src="icon.png" style="border-radius:5px;" width="80" height="80" alt="">
-      AnonChain
-    </a>
-  </nav>
-  <body>
-    <div class="gridParent">
-      <div class="hospitalsCard baseCard"> 
-        <div class="vertical-center">
-          <div class="iconEllipse">
-                
-          </div>
-        </div>
-        <div class="vertical-center">
-          <h3 style="margin-left:130px;">
-            14
-            <br/>
-            Hospitals
-          </h3>
+  <a class="navbar-brand" href="#" style="font-size: 1.75rem;">
+    <img src="icon.png" style="border-radius:5px;" width="80" height="80" alt="">
+    AnonChain
+  </a>
+</nav>
+
+<body>
+  <div class="gridParent">
+    <div class="hospitalsCard baseCard">
+      <div class="vertical-center">
+        <div class="iconEllipse">
+
         </div>
       </div>
-      <div class="manufacturersCard baseCard"> 
-        <div class="vertical-center">
-          <div class="iconEllipse"></div>
-        </div>
-        <div class="vertical-center">
-          <h3 style="margin-left:130px;">
-            34
-            <br/>
-            Manufacturers
-          </h3>
-        </div>
+      <div class="vertical-center">
+        <h3 style="margin-left:130px;">
+          14
+          <br />
+          Hospitals
+        </h3>
       </div>
-      <div class="suppliersCard baseCard"> 
-        <div class="vertical-center">
-          <div class="iconEllipse"></div>
-        </div>
-        <div class="vertical-center">
-          <h3 style="margin-left:130px;">
-            25
-            <br/>
-            Suppliers
-          </h3>
-        </div>
+    </div>
+    <div class="manufacturersCard baseCard">
+      <div class="vertical-center">
+        <div class="iconEllipse"></div>
       </div>
-      <div class="charityCard baseCard">
-        <div class="vertical-center">
-          <div class="iconEllipse"></div>
-        </div>
-        <div class="vertical-center">
-          <h3 style="margin-left:130px;">
-            7
-            <br/>
-            Charities
-          </h3>
-        </div>
+      <div class="vertical-center">
+        <h3 style="margin-left:130px;">
+          34
+          <br />
+          Manufacturers
+        </h3>
       </div>
-      <div class="collaboratorsCard baseCard"> 
-        <div class="vertical-center">
-          <div class="iconEllipse"></div>
-        </div>
-        <div class="vertical-center">
-          <h3 style="margin-left:130px;">
-            19
-            <br/>
-            Collaborators
-          </h3>
-        </div>
+    </div>
+    <div class="suppliersCard baseCard">
+      <div class="vertical-center">
+        <div class="iconEllipse"></div>
       </div>
-      <div class="defenceCard baseCard">
-        <div class="vertical-center">
-          <div class="iconEllipse"></div>
-        </div>
-        <div class="vertical-center">
-          <h3 style="margin-left:130px;">
-            33
-            <br/>
-            Defence
-          </h3>
-        </div>
+      <div class="vertical-center">
+        <h3 style="margin-left:130px;">
+          25
+          <br />
+          Suppliers
+        </h3>
       </div>
-      <div class="baseCard suppliesPieCard"> </div>
-      <div class="suppliesVsHoldingsCard baseCard"> </div>
-      <div class="suppliesProducedCard baseCard"> </div>
-      <div class="hoursOfSuppliesCard baseCard"> </div> 
-    </div> 
-    
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  </body>
+    </div>
+    <div class="charityCard baseCard">
+      <div class="vertical-center">
+        <div class="iconEllipse"></div>
+      </div>
+      <div class="vertical-center">
+        <h3 style="margin-left:130px;">
+          7
+          <br />
+          Charities
+        </h3>
+      </div>
+    </div>
+    <div class="collaboratorsCard baseCard">
+      <div class="vertical-center">
+        <div class="iconEllipse"></div>
+      </div>
+      <div class="vertical-center">
+        <h3 style="margin-left:130px;">
+          19
+          <br />
+          Collaborators
+        </h3>
+      </div>
+    </div>
+    <div class="defenceCard baseCard">
+      <div class="vertical-center">
+        <div class="iconEllipse"></div>
+      </div>
+      <div class="vertical-center">
+        <h3 style="margin-left:130px;">
+          33
+          <br />
+          Defence
+        </h3>
+      </div>
+    </div>
+    <div class="baseCard suppliesPieCard"> </div>
+    <div class="suppliesVsHoldingsCard baseCard"> </div>
+    <div class="suppliesProducedCard baseCard"> </div>
+    <div class="hoursOfSuppliesCard baseCard"> </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
